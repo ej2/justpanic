@@ -17,6 +17,7 @@
     <sounds name="Effects">
       <sound>sound\sndWalking01</sound>
       <sound>sound\sndDramatic</sound>
+      <sound>sound\sndJump</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -90,7 +91,6 @@
     <object>objects\Shadow</object>
     <object>objects\jackson</object>
     <objects name="UI">
-      <object>objects\GameController</object>
       <object>objects\TitleController</object>
       <object>objects\VerticalWall</object>
       <object>objects\HortizontalWall</object>
@@ -124,6 +124,10 @@
       <object>objects\SmallBoost</object>
       <object>objects\BigBoost</object>
       <object>objects\basePowerup</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\GameController</object>
+      <object>objects\JumpController</object>
     </objects>
   </objects>
   <rooms name="rooms">

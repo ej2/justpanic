@@ -71,6 +71,7 @@ global.powerup_drop_rate = 45;</code>
     <instance objName="HortizontalWall" x="160" y="768" name="inst_803884C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="HortizontalWall" x="416" y="768" name="inst_F30DD74D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="HortizontalWall" x="672" y="768" name="inst_24147AD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="JumpController" x="512" y="416" name="inst_C2388C49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="512" y="384" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_4E964777" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
