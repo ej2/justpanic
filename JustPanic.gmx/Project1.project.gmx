@@ -84,7 +84,7 @@
     <script>scripts\boost_player.gml</script>
     <script>scripts\boost_end.gml</script>
     <script>scripts\jump.gml</script>
-    <script>scripts\script12.gml</script>
+    <script>scripts\clean_room.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntGameOver</font>
@@ -101,6 +101,7 @@
       <object>objects\SpeechBubble</object>
       <object>objects\EnergyBar</object>
       <object>objects\TitlePlayer</object>
+      <object>objects\TitleShadow</object>
     </objects>
     <objects name="Obstacles">
       <object>objects\baseObstacle</object>
@@ -112,6 +113,7 @@
       <object>objects\MonkeyRight</object>
       <object>objects\MonkeyLeft</object>
       <object>objects\TrashCan</object>
+      <object>objects\TrashCanFalling</object>
       <object>objects\Fence</object>
       <object>objects\BrokenFence</object>
       <object>objects\MailBoxRight</object>

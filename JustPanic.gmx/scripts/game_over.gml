@@ -19,18 +19,18 @@ for (b=0; b<8; b++)
   }
 }
 
-with(basePowerup)
+with(baseGroundObstacle)
 {
-  instance_destroy();
+  vspeed = 0;
 }
 
 with(baseObstacle)
 {
-  instance_destroy();
+  vspeed = 0;
 }
 
 
-with(baseGroundObstacle)
+with(basePowerup)
 {
-  instance_destroy();
+  vspeed = 0;
 }

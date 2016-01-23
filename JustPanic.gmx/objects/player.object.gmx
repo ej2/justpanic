@@ -78,6 +78,8 @@ vspeed = global.player_speed;
     self.depth = -(self.y + 48);
     self.vspeed = global.player_speed;
 }
+
+Shadow.hspeed = self.hspeed;
 </string>
           </argument>
         </arguments>
@@ -238,21 +240,25 @@ if global.player_dead == false
     <event eventtype="4" ename="VerticalWall">
       <action>
         <libid>1</libid>
-        <id>103</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_hspeed</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>self.hspeed = 0;
+Shadow.hspeed = 0;
+Shadow.x = self.x;
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -288,21 +294,25 @@ if global.player_dead == false
     <event eventtype="9" enumb="39">
       <action>
         <libid>1</libid>
-        <id>103</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_hspeed</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>5</string>
+            <kind>1</kind>
+            <string>if global.player_dead == false
+{
+    self.hspeed = global.player_hspeed;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -333,21 +343,25 @@ if global.player_dead == false
     <event eventtype="9" enumb="37">
       <action>
         <libid>1</libid>
-        <id>103</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_hspeed</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>-5</string>
+            <kind>1</kind>
+            <string>if global.player_dead == false
+{
+    self.hspeed = -global.player_hspeed;
+}
+</string>
           </argument>
         </arguments>
       </action>

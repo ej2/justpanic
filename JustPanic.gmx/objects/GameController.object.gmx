@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.player_dead = true;
+global.player_hspeed = 5;
 global.best = 0;
 
 randomize();
@@ -138,6 +139,7 @@ alarm[0] = 20;
             <kind>1</kind>
             <string>if global.player_dead
 {
+    clean_room();
     start_game();
     
     alarm[0] = 10;

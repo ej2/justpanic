@@ -5,17 +5,6 @@ global.player_can_jump = true;
 global.scroll_speed = -5;
 global.player_speed = -1;
 
-with(player)
-{
-  instance_destroy();
-}
-
-with(jackson)
-{
-  instance_destroy();
-}
-
-
 for (b=0; b<8; b++)
 {
   if background_visible[b]
