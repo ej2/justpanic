@@ -145,6 +145,11 @@ if global.player_dead == false
             <kind>1</kind>
             <string>if global.player_dead == false
 {
+    if !audio_is_playing(sndPowerUp1)
+    {
+        audio_play_sound(sndPowerUp1, 10, false);
+    }
+
     global.player_speed = 2;   
     alarm[0] = 20;
 }

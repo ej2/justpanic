@@ -200,9 +200,9 @@ if (instance_number(player) == 1) {
           <argument>
             <kind>1</kind>
             <string>
-if !audio_is_playing(sndZombie2)
+if !audio_is_playing(sndFenceHit)
 {
-    audio_play_sound(sndZombie2, 10, false);
+    audio_play_sound(sndFenceHit, 10, false);
 }
 
 //short burst of speed when zombie hits a fence

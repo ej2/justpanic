@@ -18,6 +18,8 @@
       <sound>sound\sndWalking01</sound>
       <sound>sound\sndDramatic</sound>
       <sound>sound\sndJump</sound>
+      <sound>sound\sndPowerUp1</sound>
+      <sound>sound\sndFenceHit</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -28,6 +30,7 @@
     <sprites name="Obstacles">
       <sprite>sprites\sprRock</sprite>
       <sprite>sprites\sprTrashCan</sprite>
+      <sprite>sprites\sprTrashCanFall</sprite>
       <sprite>sprites\sprMonkeyRight</sprite>
       <sprite>sprites\sprMonkeyLeft</sprite>
       <sprite>sprites\sprMailBoxRight</sprite>
@@ -81,6 +84,7 @@
     <script>scripts\boost_player.gml</script>
     <script>scripts\boost_end.gml</script>
     <script>scripts\jump.gml</script>
+    <script>scripts\script12.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntGameOver</font>
