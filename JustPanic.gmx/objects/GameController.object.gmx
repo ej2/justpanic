@@ -25,15 +25,69 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.player_dead = true;
-global.player_hspeed = 5;
-global.best = 0;
-
+            <string>global.debug = false;
 randomize();
+
+start_game();
+    
+alarm[0] = 10;
+alarm[1] = 20;
+alarm[2] = global.powerup_drop_rate;
+alarm[4] = 35;
+
 
 //bg_snd = audio_play_sound(sndNeverRun, 5, true);
 //audio_sound_gain(bg_snd, .5, 0);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+spawn_monkey();
+alarm[4] = irandom(35) + 15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>player.vspeed = 0;
+global.can_restart = true;
 
 </string>
           </argument>
@@ -86,6 +140,11 @@ if global.player_dead == false
 {
     score += 1;
     alarm[1] = 20;
+    
+    if score mod 20 == 0
+    {
+        speed_up();
+    }
 }
 
 </string>
@@ -111,41 +170,18 @@ if global.player_dead == false
           <argument>
             <kind>1</kind>
             <string>
-spawn_monkey();
-spawn_obstacles();
+if room_get_name(room) == 'level_monkey_swarm'
+{
+ spawn_monkey_swarm();
+ spawn_forest_obstacles();
+}
+else
+{
+ spawn_obstacles();
+}
+
 
 alarm[0] = 20;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if global.player_dead
-{
-    clean_room();
-    start_game();
-    
-    alarm[0] = 10;
-    alarm[1] = 20;
-    alarm[2] = global.powerup_drop_rate;
-}
 </string>
           </argument>
         </arguments>
@@ -168,13 +204,15 @@ alarm[0] = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.player_dead
+            <string>if global.player_dead and global.can_restart
 {
+    clean_room();
     start_game();
     
     alarm[0] = 10;
     alarm[1] = 20;
     alarm[2] = global.powerup_drop_rate;
+    alarm[4] = 35;
 }
 </string>
           </argument>
@@ -226,11 +264,45 @@ draw_set_halign(fa_left);
 
 drop_shadow_text(score_x, score_y,  "Distance: " + string(score));
 
-//debug
-drop_shadow_text(score_x, score_y + 40,  "Player Speed: " + string(player.vspeed));
-drop_shadow_text(score_x, score_y + 60,  "Can Jump: " + string(global.player_can_jump));
-drop_shadow_text(score_x, score_y + 80,  "Player Y: " + string(player.y));
-
+if global.debug
+{
+    //debug
+    drop_shadow_text(score_x, score_y + 40,  "Player Speed: " + string(player.vspeed));
+    drop_shadow_text(score_x, score_y + 60,  "Can Jump: " + string(global.player_can_jump));
+    drop_shadow_text(score_x, score_y + 80,  "Player Y: " + string(player.y));
+    drop_shadow_text(score_x, score_y + 100,  "Scroll Speed: " + string(global.scroll_speed));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if global.player_dead and global.can_restart
+{
+    clean_room();
+    start_game();
+    
+    alarm[0] = 10;
+    alarm[1] = 20;
+    alarm[2] = global.powerup_drop_rate;
+}
 </string>
           </argument>
         </arguments>

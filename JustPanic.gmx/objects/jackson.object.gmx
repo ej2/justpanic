@@ -72,24 +72,17 @@ alarm[0] = 50
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound_choice = irandom(2);
-if sound_choice == 1
+            <string>
+if self.hspeed &gt; 0
 {
-    if !audio_is_playing(sndZombie1)
-    {
-        audio_play_sound(sndZombie1, 10, false);
-    }
+    self.hspeed = 4;
 }
-    
-if sound_choice == 2
+else
 {
-    if !audio_is_playing(sndZombie2)
-    {
-        audio_play_sound(sndZombie2, 10, false);
-    }
+    self.hspeed = -4;
 }
 
-alarm[1] = 300;
+alarm[0] = irandom(5) + 4;
 </string>
           </argument>
         </arguments>
@@ -118,16 +111,16 @@ if (instance_number(player) == 1) {
 
   if (player.x &gt; self.x)
   {
-    self.hspeed = 4
+    self.hspeed = 2
   }
   else 
   {
     if (player.x &lt; self.x)
     {
-      self.hspeed = -4
+      self.hspeed = -2
     }
   }
-  alarm[0] = irandom(8) + 2
+  alarm[1] = irandom(5) + 2;
 }
 
 </string>

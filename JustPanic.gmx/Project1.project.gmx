@@ -20,30 +20,45 @@
       <sound>sound\sndJump</sound>
       <sound>sound\sndPowerUp1</sound>
       <sound>sound\sndFenceHit</sound>
+      <sound>sound\sndSplash</sound>
     </sounds>
+    <sound>sound\sound11</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="NPCs">
+      <sprite>sprites\sprMonkeyRight</sprite>
+      <sprite>sprites\sprMonkeyLeft</sprite>
+    </sprites>
     <sprites name="Enemies">
       <sprite>sprites\sprJackson</sprite>
       <sprite>sprites\sprJacksonRedEye</sprite>
+      <sprite>sprites\sprCrazyZombie</sprite>
     </sprites>
     <sprites name="Obstacles">
-      <sprite>sprites\sprRock</sprite>
-      <sprite>sprites\sprTrashCan</sprite>
-      <sprite>sprites\sprTrashCanFall</sprite>
-      <sprite>sprites\sprMonkeyRight</sprite>
-      <sprite>sprites\sprMonkeyLeft</sprite>
-      <sprite>sprites\sprMailBoxRight</sprite>
-      <sprite>sprites\sprMailBoxLeft</sprite>
-      <sprite>sprites\sprFence</sprite>
-      <sprite>sprites\sprFenceBroken</sprite>
-      <sprite>sprites\sprBush</sprite>
-      <sprite>sprites\sprMud</sprite>
-      <sprite>sprites\sprPothole</sprite>
-      <sprite>sprites\sprWater</sprite>
-      <sprite>sprites\sprBridgeLeft</sprite>
-      <sprite>sprites\sprBridgeRight</sprite>
-      <sprite>sprites\sprBridge</sprite>
+      <sprites name="Nature">
+        <sprite>sprites\sprBush</sprite>
+        <sprite>sprites\sprMud</sprite>
+        <sprite>sprites\sprWater</sprite>
+        <sprite>sprites\sprWaterPool</sprite>
+        <sprite>sprites\sprRock</sprite>
+        <sprite>sprites\sprLog</sprite>
+      </sprites>
+      <sprites name="TrashCan">
+        <sprite>sprites\sprTrashCanFall</sprite>
+        <sprite>sprites\sprTrashcanSpill</sprite>
+        <sprite>sprites\sprTrashCan</sprite>
+        <sprite>sprites\sprTrashcanLid</sprite>
+      </sprites>
+      <sprites name="Street">
+        <sprite>sprites\sprFenceBroken</sprite>
+        <sprite>sprites\sprFence</sprite>
+        <sprite>sprites\sprPothole</sprite>
+        <sprite>sprites\sprBridgeLeft</sprite>
+        <sprite>sprites\sprBridgeRight</sprite>
+        <sprite>sprites\sprBridge</sprite>
+        <sprite>sprites\sprMailBoxRight</sprite>
+        <sprite>sprites\sprMailBoxLeft</sprite>
+      </sprites>
     </sprites>
     <sprites name="PowerUps">
       <sprite>sprites\sprCoin</sprite>
@@ -53,8 +68,11 @@
     </sprites>
     <sprites name="Player">
       <sprite>sprites\sprButters</sprite>
+      <sprite>sprites\sprDrowning</sprite>
       <sprite>sprites\sprBoy</sprite>
       <sprite>sprites\sprShadow</sprite>
+      <sprite>sprites\sprPanic</sprite>
+      <sprite>sprites\sprJump</sprite>
     </sprites>
     <sprites name="UI">
       <sprite>sprites\sprVWall</sprite>
@@ -62,6 +80,9 @@
       <sprite>sprites\sprSpeechBubble</sprite>
       <sprite>sprites\sprEnergyBar</sprite>
       <sprite>sprites\sprLogo</sprite>
+      <sprite>sprites\sprLevelButton1</sprite>
+      <sprite>sprites\sprLevelButton2</sprite>
+      <sprite>sprites\sprLevelLocked</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -69,22 +90,44 @@
     <background>background\bgGrass</background>
     <background>background\street</background>
     <background>background\bushes</background>
+    <background>background\Bushes2</background>
+    <background>background\bgForest</background>
+    <background>background\bgWater</background>
+    <background>background\bgSidewalk</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\game_over.gml</script>
-    <script>scripts\spawn_monkey.gml</script>
-    <script>scripts\spawn_obstacles.gml</script>
-    <script>scripts\spawn_powerups.gml</script>
-    <script>scripts\start_game.gml</script>
-    <script>scripts\kill_player.gml</script>
-    <script>scripts\drop_shadow_text.gml</script>
-    <script>scripts\stop_alarms.gml</script>
-    <script>scripts\spawn_bridge.gml</script>
-    <script>scripts\boost_player.gml</script>
-    <script>scripts\boost_end.gml</script>
-    <script>scripts\jump.gml</script>
-    <script>scripts\clean_room.gml</script>
+    <scripts name="Monkey">
+      <script>scripts\start_monkey.gml</script>
+      <script>scripts\monkey_switch_direction.gml</script>
+      <script>scripts\spawn_monkey_swarm.gml</script>
+      <script>scripts\spawn_monkey.gml</script>
+    </scripts>
+    <scripts name="Game">
+      <script>scripts\game_over.gml</script>
+      <script>scripts\clean_room.gml</script>
+      <script>scripts\speed_up.gml</script>
+      <script>scripts\kill_player.gml</script>
+      <script>scripts\start_game.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\boost_end.gml</script>
+      <script>scripts\boost_player.gml</script>
+      <script>scripts\jump.gml</script>
+      <script>scripts\panic.gml</script>
+      <script>scripts\chill.gml</script>
+    </scripts>
+    <scripts name="Utils">
+      <script>scripts\stop_alarms.gml</script>
+      <script>scripts\drop_shadow_text.gml</script>
+    </scripts>
+    <scripts name="Obstacles">
+      <script>scripts\spawn_bridge.gml</script>
+      <script>scripts\spawn_obstacles.gml</script>
+      <script>scripts\spawn_powerups.gml</script>
+      <script>scripts\spawn_forest_obstacles.gml</script>
+      <script>scripts\spawn_hedge.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntGameOver</font>
@@ -95,23 +138,29 @@
     <object>objects\Shadow</object>
     <object>objects\jackson</object>
     <objects name="UI">
-      <object>objects\TitleController</object>
       <object>objects\VerticalWall</object>
       <object>objects\HortizontalWall</object>
       <object>objects\SpeechBubble</object>
       <object>objects\EnergyBar</object>
       <object>objects\TitlePlayer</object>
       <object>objects\TitleShadow</object>
+      <object>objects\btnLevel1</object>
+      <object>objects\btnLevel2</object>
+      <object>objects\LevelButton1</object>
+      <object>objects\LevelButton2</object>
+      <object>objects\LevelLocked</object>
+      <object>objects\baseButton</object>
     </objects>
     <objects name="Obstacles">
       <object>objects\baseObstacle</object>
       <object>objects\baseGroundObstacle</object>
+      <object>objects\baseStopObstacle</object>
+      <object>objects\baseDeadly</object>
       <object>objects\Rock</object>
       <object>objects\Pothole</object>
       <object>objects\Mud</object>
+      <object>objects\WaterPool</object>
       <object>objects\Bush</object>
-      <object>objects\MonkeyRight</object>
-      <object>objects\MonkeyLeft</object>
       <object>objects\TrashCan</object>
       <object>objects\TrashCanFalling</object>
       <object>objects\Fence</object>
@@ -133,12 +182,22 @@
     </objects>
     <objects name="Controllers">
       <object>objects\GameController</object>
+      <object>objects\TitleController</object>
       <object>objects\JumpController</object>
+    </objects>
+    <objects name="NPCs">
+      <object>objects\baseMonkey</object>
+      <object>objects\MonkeyRight</object>
+      <object>objects\MonkeyLeft</object>
+      <object>objects\MovingMonkey</object>
+      <object>objects\SwarmMonkey</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Title</room>
-    <room>rooms\Game</room>
+    <room>rooms\LevelChoose</room>
+    <room>rooms\level_street</room>
+    <room>rooms\level_monkey_swarm</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

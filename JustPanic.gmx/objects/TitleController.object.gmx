@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x = view_wport[0]/2;
-start_y = view_hport[0]/2 + 100;
+            <string>global.best = 0;
+
+start_x = view_xport[0] + view_wport[0]/2;
+start_y = view_yport[0] + view_hport[0]/2 + 100;
 
 instance_create(start_x, start_y, TitlePlayer);
 instance_create(start_x, start_y + 36, TitleShadow);
@@ -52,7 +54,7 @@ instance_create(start_x, start_y + 36, TitleShadow);
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>Game</room>
+            <room>LevelChoose</room>
           </argument>
         </arguments>
       </action>
@@ -107,7 +109,7 @@ drop_shadow_text(over_x, over_y + 160, "Click to start!");
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>Game</room>
+            <room>LevelChoose</room>
           </argument>
         </arguments>
       </action>

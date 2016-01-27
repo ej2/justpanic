@@ -1,21 +1,19 @@
 //x_location = irandom(global.right_border - global.left_border) + global.left_border;
 
-x_location = 0;
+
+background_vspeed[1] = global.scroll_speed;
+background_y[1] = room_height;
+background_visible[1] = true;
+
+x_location = global.left_border;
 water_width = sprite_get_width(sprWater);
 
-while(x_location < room_width)
-{
-    inst = instance_create(x_location, room_height, Water);
-    x_location = x_location + water_width;   
-}
+instance_create(global.left_border, room_height, Water);
+instance_create(global.left_border + water_width, room_height, Water);
+        
+bridge_x = global.grass_left_border;
+inst = instance_create(bridge_x, room_height, Bridge);
 
-bridge_tile_width = sprite_get_width(sprBridge);
-bridge_x = 
 
-inst = instance_create(x_location, room_height, BridgeLeft);
-inst = instance_create(x_location, room_height, Bridge);
-inst = instance_create(x_location, room_height, Bridge);
-inst = instance_create(x_location, room_height, BridgeRight);
 
-//global.grass_left_border
-//global.grass_right_border
+

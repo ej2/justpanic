@@ -54,6 +54,7 @@ global.player_can_jump = true;
 global.player_jumping = false;
 player.vspeed = global.player_speed;
 
+chill();
 alarm[4] = 2;
 
 </string>

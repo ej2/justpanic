@@ -2,8 +2,17 @@ score = 0;
 global.player_dead = false;
 global.player_jumping = false;
 global.player_can_jump = true;
-global.scroll_speed = -5;
+global.player_hspeed = 5;
 global.player_speed = -1;
+
+global.scroll_start_speed = -6;
+global.scroll_max_speed = -12;
+
+global.powerup_drop_rate = 40;
+global.scroll_speed = global.scroll_start_speed
+global.monkey_count = 0;
+
+global.can_restart = false;
 
 for (b=0; b<8; b++)
 {
@@ -19,6 +28,4 @@ start_y = room_height/2 + 100;
 p = instance_create(start_x, start_y, player);
 p = instance_create(start_x, start_y + 36, Shadow);
 b = instance_create(start_x, start_y - 380, jackson);
-//ebar = instance_create(view_wport[view_current] - 20, 10, EnergyBar);
-
 

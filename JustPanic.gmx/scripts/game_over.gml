@@ -24,13 +24,35 @@ with(baseGroundObstacle)
   vspeed = 0;
 }
 
+with(baseBridge)
+{
+  vspeed = 0;
+}
+
 with(baseObstacle)
 {
   vspeed = 0;
 }
 
+with(baseStopObstacle)
+{
+  vspeed = 0;
+}
 
 with(basePowerup)
 {
   vspeed = 0;
 }
+
+with(baseMonkey)
+{
+  vspeed = 0;
+}
+
+
+with(baseDeadly)
+{
+  vspeed = 0;
+}
+
+GameController.alarm[3] = 30;

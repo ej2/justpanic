@@ -8,6 +8,9 @@ if global.player_can_jump
         }
         
         player.vspeed = -10;
+        
+        player.sprite_index = sprJump;
+        player.image_speed = 0.4;
         global.player_jumping = true;
         global.player_can_jump = false;
         JumpController.alarm[0] = 6;
