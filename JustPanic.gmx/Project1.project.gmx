@@ -15,6 +15,7 @@
       <sound>sound\sndZombie2</sound>
     </sounds>
     <sounds name="Effects">
+      <sound>sound\sndSmash</sound>
       <sound>sound\sndWalking01</sound>
       <sound>sound\sndDramatic</sound>
       <sound>sound\sndJump</sound>
@@ -86,6 +87,8 @@
       <sprite>sprites\sprLevelButton1</sprite>
       <sprite>sprites\sprLevelButton2</sprite>
       <sprite>sprites\sprLevelLocked</sprite>
+      <sprite>sprites\sprSpeakerOn</sprite>
+      <sprite>sprites\sprSpeakerOff</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -127,6 +130,7 @@
       <script>scripts\drop_shadow_text.gml</script>
       <script>scripts\load_score.gml</script>
       <script>scripts\save_score.gml</script>
+      <script>scripts\play_snd.gml</script>
     </scripts>
     <scripts name="Obstacles">
       <script>scripts\spawn_bridge.gml</script>
@@ -152,12 +156,15 @@
       <object>objects\EnergyBar</object>
       <object>objects\TitlePlayer</object>
       <object>objects\TitleShadow</object>
+      <object>objects\SoundToggle</object>
       <object>objects\btnLevel1</object>
       <object>objects\btnLevel2</object>
-      <object>objects\LevelButton1</object>
-      <object>objects\LevelButton2</object>
-      <object>objects\LevelLocked</object>
       <object>objects\baseButton</object>
+      <objects name="Level">
+        <object>objects\LevelLocked</object>
+        <object>objects\LevelButton1</object>
+        <object>objects\LevelButton2</object>
+      </objects>
     </objects>
     <objects name="Obstacles">
       <object>objects\baseObstacle</object>

@@ -37,7 +37,7 @@ instance_create(start_x, start_y + 36, TitleShadow);
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="50">
+    <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
         <id>224</id>
