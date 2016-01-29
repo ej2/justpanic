@@ -3,7 +3,8 @@ global.player_dead = false;
 global.player_jumping = false;
 global.player_can_jump = true;
 global.player_hspeed = 5;
-global.player_speed = -1;
+global.player_speed = 0;
+global.player_default_speed = -1;
 
 global.scroll_start_speed = -6;
 global.scroll_max_speed = -12;

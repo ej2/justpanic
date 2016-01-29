@@ -87,6 +87,7 @@ alarm[4] = irandom(35) + 15;
           <argument>
             <kind>1</kind>
             <string>player.vspeed = 0;
+player.hspeed = 0;
 global.can_restart = true;
 
 </string>
@@ -181,6 +182,11 @@ else
 }
 
 
+if irandom(5) &lt; 2
+{
+ spawn_clouds();
+}
+
 alarm[0] = 20;
 </string>
           </argument>
@@ -206,13 +212,7 @@ alarm[0] = 20;
             <kind>1</kind>
             <string>if global.player_dead and global.can_restart
 {
-    clean_room();
-    start_game();
-    
-    alarm[0] = 10;
-    alarm[1] = 20;
-    alarm[2] = global.powerup_drop_rate;
-    alarm[4] = 35;
+   restart();
 }
 </string>
           </argument>
@@ -296,12 +296,7 @@ if global.debug
             <kind>1</kind>
             <string>if global.player_dead and global.can_restart
 {
-    clean_room();
-    start_game();
-    
-    alarm[0] = 10;
-    alarm[1] = 20;
-    alarm[2] = global.powerup_drop_rate;
+    restart();
 }
 </string>
           </argument>

@@ -25,16 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.vspeed = background_vspeed[0];
-self.hspeed = 5;
+            <string>start_monkey(5);
 
-alarm[0] = irandom(100) + 50;
+alarm[1] = irandom(100) + 50;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>103</id>

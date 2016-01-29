@@ -75,7 +75,7 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.player_speed = -1;
+            <string>global.player_speed = global.player_default_speed;
 chill();
 </string>
           </argument>
@@ -111,39 +111,6 @@ Shadow.hspeed = self.hspeed;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="baseDeadly">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if global.player_dead == false
-{
-    audio_play_sound(sndSplash, 10, false);
-    kill_player();
-    alarm[1] = 10;
-    sprite_index = sprDrowning;
-    image_speed = 0.5;
-    self.vspeed = 0;
-    Shadow.visible = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="baseMonkey">
       <action>
         <libid>1</libid>
@@ -166,6 +133,7 @@ if global.player_dead == false
 {
     if global.player_jumping == false
     {
+        monkey_switch_direction(other);
         global.player_speed = -4;
         alarm[0] = 5;
     }
@@ -175,34 +143,28 @@ if global.player_dead == false
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="baseStopObstacle">
+    <event eventtype="4" ename="Crate">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>202</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_change_object</functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>
-if global.player_dead == false
-{
-    if global.player_jumping == false
-    {
-        panic();
-        global.player_speed = global.scroll_speed;
-        alarm[0] = 5;
-    }
-}
-</string>
+            <kind>10</kind>
+            <object>Explosion</object>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -325,7 +287,8 @@ if global.player_dead == false
     self.vspeed = 0;
     self.hspeed = 0;
     Shadow.visible = false;
-}
+    
+} 
 </string>
           </argument>
         </arguments>
@@ -378,6 +341,71 @@ if global.player_dead == false
     if global.player_jumping == false
     {
         global.player_speed = -4;
+        alarm[0] = 5;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="baseDeadly">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if global.player_dead == false
+{
+    audio_play_sound(sndSplash, 10, false);
+    kill_player();
+    alarm[1] = 10;
+    sprite_index = sprDrowning;
+    image_speed = 0.5;
+    self.vspeed = 0;
+    Shadow.visible = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="baseStopObstacle">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if global.player_dead == false
+{
+    if global.player_jumping == false
+    {
+        panic();
+        global.player_speed = global.scroll_speed;
         alarm[0] = 5;
     }
 }

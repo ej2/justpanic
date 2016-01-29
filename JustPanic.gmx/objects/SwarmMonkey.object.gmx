@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>start_speed = irandom(4) + 4;
 start_monkey(start_speed);
-alarm[0] = irandom(80) + 10;
+alarm[1] = irandom(80) + 10;
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,7 +51,31 @@ alarm[0] = irandom(80) + 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = irandom(50) + 10;
+            <string>seek_bait(self);
+alarm[2] = 50;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = irandom(50) + 10;
 
 action = irandom(2);
 switch (action)
