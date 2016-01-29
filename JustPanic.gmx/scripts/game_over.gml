@@ -8,6 +8,8 @@ if global.best < score
 {
     global.best = score;
 }
+rm = room_get_name(room);
+save_score(rm);
 
 audio_play_sound(sndDramatic, 10, false);
 

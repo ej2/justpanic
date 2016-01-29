@@ -264,6 +264,11 @@ draw_set_halign(fa_left);
 
 drop_shadow_text(score_x, score_y,  "Distance: " + string(score));
 
+draw_set_halign(fa_right);
+high_score_x = view_xview[view_current] + view_wport[view_current] - 10;
+high_score_y = score_y
+drop_shadow_text(high_score_x, score_y,  "High Score: " + string(global.highscore));
+
 if global.debug
 {
     //debug

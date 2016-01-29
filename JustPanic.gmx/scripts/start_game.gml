@@ -30,3 +30,6 @@ p = instance_create(start_x, start_y, player);
 p = instance_create(start_x, start_y + 36, Shadow);
 b = instance_create(start_x, start_y - 380, jackson);
 
+rm = room_get_name(room);
+load_score(rm);
+

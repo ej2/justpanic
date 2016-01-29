@@ -125,6 +125,8 @@
     <scripts name="Utils">
       <script>scripts\stop_alarms.gml</script>
       <script>scripts\drop_shadow_text.gml</script>
+      <script>scripts\load_score.gml</script>
+      <script>scripts\save_score.gml</script>
     </scripts>
     <scripts name="Obstacles">
       <script>scripts\spawn_bridge.gml</script>
